@@ -1,0 +1,16 @@
+{
+  "short_name": "SAM",
+  "name": "SAM – Quản lý tài sản thông minh (ULIS)",
+  "description": "Báo hỏng, dự toán sửa chữa, đèn cảnh báo vòng đời tài sản; nhận thông báo đẩy về điện thoại.",
+  "lang": "vi",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1d4f73",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

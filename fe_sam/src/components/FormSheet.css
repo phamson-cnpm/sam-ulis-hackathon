@@ -1,0 +1,275 @@
+
+/* Trang biểu mẫu khổ A4, bố cục theo file "Mẫu phiếu SAM": Times New Roman 12, viền mảnh,
+   dải mục nền xanh nhạt, ô giá trị in đậm, chữ ký ba cột. Dùng chung cho xem trên màn hình và bản in. */
+
+.fs-paper {
+  --fs-line: #8d949c;
+  --fs-band: #d9eaee;
+  --fs-head: #e6e6e6;
+  --fs-ink: #111111;
+  --fs-soft: #444444;
+  box-sizing: border-box;
+  width: 210mm;
+  min-height: 297mm;
+  padding: 14mm 14mm 14mm 18mm;
+  background: #ffffff;
+  color: var(--fs-ink);
+  font-family: 'Times New Roman', Times, 'Liberation Serif', 'Nimbus Roman', serif;
+  font-size: 12pt;
+  line-height: 1.2;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.fs-paper * {
+  box-sizing: border-box;
+}
+
+.fs-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8mm;
+}
+
+.fs-org {
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.fs-org p {
+  margin: 0;
+}
+
+.fs-no {
+  min-width: 46mm;
+  padding: 2mm 4mm;
+  border: 0.75pt solid var(--fs-ink);
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.fs-no span {
+  display: block;
+  font-weight: 400;
+  font-size: 11pt;
+}
+
+/* Tiêu đề có quốc hiệu (biên bản bàn giao) */
+.fs-nat {
+  gap: 0;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.fs-nat p {
+  margin: 0;
+}
+
+.fs-nat-l {
+  flex: 0 0 42%;
+}
+
+.fs-nat-r {
+  flex: 0 0 58%;
+}
+
+.fs-nat .fs-num {
+  margin-top: 1.5mm;
+  font-size: 11pt;
+}
+
+.fs-nat .fs-i {
+  margin-top: 3mm;
+}
+
+.fs-u {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.fs-i {
+  font-style: italic;
+}
+
+.fs-sec-plain {
+  margin-top: 3mm;
+  font-weight: 700;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.fs-parties > div {
+  display: grid;
+  grid-template-columns: 58% 42%;
+  margin-top: 1.5mm;
+}
+
+.fs-title {
+  margin: 4.5mm 0 0;
+  text-align: center;
+  font-size: 14pt;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.fs-sub {
+  margin: 0.5mm 0 3mm;
+  text-align: center;
+  font-style: italic;
+}
+
+.fs-sec {
+  margin-top: 1.6mm;
+  padding: 0.6mm 1.8mm;
+  border: 0.6pt solid var(--fs-line);
+  background: var(--fs-band);
+  font-weight: 700;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.fs-grid,
+.fs-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.fs-grid td,
+.fs-table td,
+.fs-table th {
+  border: 0.6pt solid var(--fs-line);
+  padding: 0.5mm 1.8mm;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.fs-grid tr,
+.fs-table tr {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.fs-grid .fs-l {
+  color: var(--fs-soft);
+  font-size: 11pt;
+}
+
+.fs-grid .fs-v {
+  font-weight: 700;
+}
+
+.fs-r {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.fs-c {
+  text-align: center;
+}
+
+.fs-table.fs-small {
+  font-size: 11pt;
+}
+
+.fs-table.fs-small td,
+.fs-table.fs-small th {
+  padding-left: 1.2mm;
+  padding-right: 1.2mm;
+}
+
+.fs-table th {
+  background: var(--fs-head);
+  font-weight: 700;
+  text-align: center;
+}
+
+.fs-table tfoot td {
+  background: var(--fs-head);
+}
+
+.fs-b {
+  font-weight: 700;
+}
+
+.fs-note {
+  margin: 1.2mm 0 0;
+  font-style: italic;
+  font-size: 11pt;
+}
+
+.fs-para {
+  margin: 1.5mm 0 0;
+}
+
+.fs-sign {
+  display: grid;
+  gap: 4mm;
+  margin-top: 5mm;
+  text-align: center;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.fs-sign p {
+  margin: 0;
+}
+
+/* Họ tên các cột thẳng hàng dù chức danh dài ngắn khác nhau */
+.fs-sign > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.fs-sign .fs-st {
+  font-weight: 700;
+}
+
+.fs-sign .fs-sn {
+  font-style: italic;
+}
+
+.fs-sign .fs-name {
+  margin-top: auto;
+  padding-top: 13mm;
+  font-weight: 700;
+}
+
+.fs-foot {
+  margin: 5mm 0 0;
+  font-style: italic;
+  font-size: 10pt;
+  color: #666666;
+}
+
+/* Bản in: chỉ in biểu mẫu đang xem (body có class fs-printing trong lúc gọi window.print) */
+.fs-print-root {
+  display: none;
+}
+
+@media print {
+  body.fs-printing #root {
+    display: none !important;
+  }
+  body.fs-printing .fs-print-root {
+    display: block !important;
+  }
+  .fs-print-root .fs-paper {
+    width: auto;
+    min-height: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+  .fs-print-root .fs-paper + .fs-paper {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 14mm 14mm 14mm 18mm;
+}

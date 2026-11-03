@@ -1,0 +1,88 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Biến màu cho style nội dòng (ô đèn, biểu đồ). Giữ đồng bộ với tailwind.config.js. */
+:root {
+  --color-paper: #eef1f3;
+  --color-surface: #ffffff;
+  --color-ink: #222b35;
+  --color-muted: #5f6a77;
+  --color-rule: #d6dade;
+  --color-accent: #2a78b8;
+  --color-accent-line: #b6d3ec;
+  --color-band: #165f6e;
+
+  --color-l-red: #b3372f;
+  --color-l-red-soft: #fbeceb;
+  --color-l-orange: #c25f1c;
+  --color-l-orange-soft: #fcefe4;
+  --color-l-amber: #a87c12;
+  --color-l-amber-soft: #fbf3dc;
+  --color-l-green: #2c7a4f;
+  --color-l-green-soft: #e8f3ec;
+  --color-l-blue: #2d62a0;
+  --color-l-blue-soft: #e9eff8;
+  --color-l-gray: #6f7783;
+  --color-l-gray-soft: #eff1f3;
+}
+
+@layer base {
+  html {
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    margin: 0;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  /* Ô chọn trong bảng lưới: đỏ khi chọn, như phần mềm quản lý tài sản đang dùng */
+  table input[type='checkbox'] {
+    accent-color: #e5484d;
+  }
+}
+
+@layer utilities {
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.print-only {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
